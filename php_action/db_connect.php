@@ -105,6 +105,24 @@ function create_orders_table($connect, $table) {
   }
 }
 
+function create_order_item_table($connect, $table) {
+  $sql = "CREATE TABLE IF NOT EXISTS `$table` (
+  `order_item_id` int(11) unsigned NOT NULL auto_increment,
+  `order_id` varchar(255) NOT NULL,
+  `product_id` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `rate` varchar(255) NOT NULL,
+  `total` varchar(255) NOT NULL,
+  `discount` varchar(255) NOT NULL,
+  `order_item_status` varchar(255) NOT NULL,
+  PRIMARY KEY(`order_item_id`)
+  )";
+
+  if ($connect->query($sql) == FALSE) {
+    echo json_encode(array("error"=> 'Error encountered: ' . $connect->error_get_last));
+  }
+}
+
 function create_users_table($connect, $table) {
   $sql = "CREATE TABLE IF NOT EXISTS `$table` (
   `user_id` int(11) unsigned NOT NULL auto_increment,
