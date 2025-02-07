@@ -113,7 +113,6 @@ function create_order_item_table($connect, $table) {
   `quantity` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL,
-  `discount` varchar(255) NOT NULL,
   `order_item_status` varchar(255) NOT NULL,
   PRIMARY KEY(`order_item_id`)
   )";
